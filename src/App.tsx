@@ -1,8 +1,12 @@
 import { useState } from "react";
 import Navbar from "@/scenes/navbar";
+import { SelectedPage } from "@/shared/types";
+SelectedPage;
 
 function App() {
-  const [selectedPage, setSelectedPage] = useState<string>("home");
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+    SelectedPage.Home
+  );
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
   return (
