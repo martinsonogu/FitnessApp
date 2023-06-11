@@ -1,8 +1,10 @@
+import Navbar from "@/scenes/navbar";
+
 function App() {
   return (
-    <>
-      <p>Help</p>
-    </>
+    <div className="app bg-gray-20">
+      <Navbar />
+    </div>
   );
 }
 
