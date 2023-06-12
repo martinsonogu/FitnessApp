@@ -12,7 +12,7 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const index = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -71,17 +71,19 @@ const index = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
           </div>
         </div>
       </div>
-      {/* Mobile Menu Modal */}
+
+      {/* MOBILE MENU MODAL */}
       {!isAboveMediumScreens && isMenuToggled && (
-        <div className="w- fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
+        <div className="fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl">
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
               <XMarkIcon className="h-6 w-6 text-gray-400" />
             </button>
           </div>
-          {/* Menu items */}
-          <div className=" ml-[33%] flex flex-col gap-10 text-2xl ">
+
+          {/* MENU ITEMS */}
+          <div className="ml-[33%] flex flex-col gap-10 text-2xl">
             <Link
               page="Home"
               selectedPage={selectedPage}
@@ -108,5 +110,4 @@ const index = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
     </nav>
   );
 };
-
-export default index;
+export default Navbar;
